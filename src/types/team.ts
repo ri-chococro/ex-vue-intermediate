@@ -23,7 +23,7 @@ export class Team {
    */
   get formatDate() {
     const year = this.establishmentDate.getFullYear();
-    const month = this.establishmentDate.getMonth();
+    const month = this.establishmentDate.getMonth() + 1;
     const day = this.establishmentDate.getDate();
     return year + "年" + month + "月" + day + "日";
   }

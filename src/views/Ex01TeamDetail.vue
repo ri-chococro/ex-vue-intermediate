@@ -18,14 +18,22 @@ import { Team } from "@/types/team";
 
 @Component
 export default class Ex01TeamDetail extends Vue {
+  //対象の野球チームオブジェクト
   private currentTeam!: Team;
 
+  /**
+   * VuexストアのGetter経由で受け取ったリクエストパラメータのIDから１件の野球チーム情報を取得する.
+   *
+   */
   created() {
     const teamID = parseInt(this["$route"].params.id);
     this.currentTeam = this["$store"].getters.getTeamById(teamID);
     console.log(this.currentTeam);
   }
 
+  /**
+   * 戻るボタンが押されたら野球チーム一覧ページに遷移.
+   */
   onClick() {
     this["$router"].push("/ex01");
   }

@@ -18,7 +18,7 @@ export class Team {
   ) {}
 
   /**
-   * 発足日を
+   * 発足日をフォーマットして返す.
    *
    */
   get formatDate() {

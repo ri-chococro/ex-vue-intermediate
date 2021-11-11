@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   strict: true,
   state: {
+    //野球チーム
     teams: [
       new Team(
         10,
@@ -151,10 +152,22 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   getters: {
+    /**
+     * 野球チーム一覧の情報を返す.
+     *
+     * @param state - stateを利用するための引数
+     * @returns 野球チーム一覧の情報
+     */
     getTeams(state) {
       return state.teams;
     },
 
+    /**
+     * IDから野球チームを検索し返す.
+     *
+     * @param state - stateを利用するための引数
+     * @returns - 渡されたIDで絞り込んだ野球チーム情報を1件返す
+     */
     getTeamById(state) {
       return (id: number) => {
         return state.teams.filter((team) => team.id == id)[0];

@@ -15,6 +15,11 @@ import { Team } from "@/types/team";
 
 @Component
 export default class Ex01 extends Vue {
+  /**
+   * ⾮同期で取得したVuexストア内の野球チーム一覧の情報を取得し返す.
+   *
+   * @returns - 野球チーム一覧の情報
+   */
   get teams() {
     return this["$store"].getters.getTeams;
   }
